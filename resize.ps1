@@ -1,5 +1,5 @@
 Add-Type -AssemblyName System.Drawing
-$sourceFile = "d:\Users\Downloads\Last Unit\logo.png"
+$sourceFile = "d:\Users\Downloads\Last Unit\logo (1).png"
 $sourceImg = [System.Drawing.Image]::FromFile($sourceFile)
 
 $sizes = @(16, 32, 114, 128, 256, 512)

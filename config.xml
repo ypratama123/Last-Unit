@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.lastunit.game" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Last Unit</name>
+    <description>
+        Last Unit - A game exported from Construct 2.
+    </description>
+    <author email="developer@example.com" href="http://example.com">
+        Construct 2 Developer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    
+    <!-- Preferences for Game -->
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="landscape" />
+    <preference name="BackgroundColor" value="0xff000000" />
+    
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="icon-256.png" />
+        <icon src="icon-128.png" density="hdpi" />
+        <icon src="icon-114.png" density="xhdpi" />
+    </platform>
+</widget>

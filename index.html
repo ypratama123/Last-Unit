@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -91,6 +91,25 @@
 		{			
 			// Create new runtime using the c2canvas
 			cr_createRuntime("c2canvas");
+			
+			// Try to lock orientation to landscape automatically
+			function lockOrientation() {
+				if (screen.orientation && screen.orientation.lock) {
+					screen.orientation.lock('landscape').catch(function(e) { console.log('Orientation lock failed:', e); });
+				} else if (screen.lockOrientation) {
+					screen.lockOrientation('landscape');
+				} else if (screen.mozLockOrientation) {
+					screen.mozLockOrientation('landscape');
+				} else if (screen.msLockOrientation) {
+					screen.msLockOrientation('landscape');
+				}
+			}
+			
+			// Attempt to lock on load
+			lockOrientation();
+			// Browsers often require user interaction before allowing orientation lock
+			document.addEventListener('touchstart', lockOrientation, {once:true});
+			document.addEventListener('click', lockOrientation, {once:true});
 		});
 		
 		// Pause and resume on page becoming visible/invisible
